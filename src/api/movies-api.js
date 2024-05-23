@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-const apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYmE0MjA0NWQxNTNjZThmMWNkNzRiMzJhMTU3NGQ5NSIsInN1YiI6IjY2MTY1ZGU1ZDhmNDRlMDE2M2RmODM1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VP4GCR7D-BoJnuK_g4bdaRoqt9_s2W8gPpdqacR4oKQ";
+const apiKey = process.env.TMDB_API_KEY;
 const API_URL = "https://api.themoviedb.org/3";
 
 export const fetchPopularMovies = async () => {
