@@ -15,6 +15,9 @@ export default {
 </script>
 
 <style>
+html {
+  overflow: hidden;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,5 +30,6 @@ export default {
 }
 .router-container {
   width: 100%;
+  overflow-y: scroll;
 }
 </style>
