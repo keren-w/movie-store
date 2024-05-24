@@ -4,7 +4,7 @@ import {fetchPopularMovies} from '../api/movies-api';
 export const useMovieStore = defineStore('movieStore', {
   state: () => ({
     movies: [],
-    watchlist: JSON.parse(localStorage.getItem('watchlist')) || []
+    watchlist: JSON.parse(localStorage.getItem('watchlist')) || [],
   }),
   getters: {
     popularMovies(state) {

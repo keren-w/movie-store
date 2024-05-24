@@ -47,6 +47,7 @@ export default {
 .movies {
   display: flex;
   flex-wrap: wrap;
+  gap: 8px;
   justify-content: center;
 }
 </style>
