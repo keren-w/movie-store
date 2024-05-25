@@ -22,10 +22,15 @@ export default {
   color: #2c3e50;
   background-color: #eee;
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 200px);
   overflow: hidden;
+  margin: 100px
 }
 .router-container {
   width: 100%;
+  overflow-y:scroll;
+}
+html {
+  overflow: hidden;
 }
 </style>
