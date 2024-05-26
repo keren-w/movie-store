@@ -35,7 +35,6 @@ export default {
     };
     const isActive = ref(false);
     const toggleActive = () => {
-      console.log("toggeled!");
       isActive.value = !isActive.value;
     };
     return {
