@@ -66,30 +66,20 @@ export default {
       visibility: visible;
     }
 
-.movie-image {
-  position: relative;
-  &::after {
-    content: "blablabla";
-    visibility: visible;
-    z-index: 10;
-    color: red;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
+    .movie-image {
+      position: relative;
 
-    h3 {
-      &::before {
-    content: "This content is before.";
-    color: red;
-  }
-  &::after {
-    content: "This content is after.";
-    color: blue;
-  }
+      &::after {
+        content: "";
+        visibility: visible;
+        z-index: 10;
+        color: rgba(255, 255, 255, 0.5);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
   }
 }

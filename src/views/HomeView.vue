@@ -1,26 +1,20 @@
 <template>
   <div>
     <SearchBar @search="searchMovies" />
-    <div class="movies">
-      <MovieCard
-        v-for="movie in displayedMovies"
-        :key="movie.id"
-        :movie="movie"
-      />
-    </div>
+    <MovieList :movies="displayedMovies" />
   </div>
 </template>
 
 <script>
 import { ref, onMounted } from 'vue';
 import { useMovieStore } from '../stores/movieStore';
-import MovieCard from '../components/MovieCard.vue';
 import SearchBar from '../components/SearchBar.vue';
+import MovieList from '../components/MovieList.vue';
 
 export default {
   components: {
-    MovieCard,
-    SearchBar
+    SearchBar,
+    MovieList
   },
   setup() {
     const movieStore = useMovieStore();
@@ -42,12 +36,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.movies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-}
-</style>

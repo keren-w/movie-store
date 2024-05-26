@@ -9,7 +9,7 @@ export const useMovieStore = defineStore('movieStore', {
   getters: {
     popularMovies(state) {
         return state.movies;
-    }
+    },
   },
   actions: {
     async fetchPopularMovies() {
