@@ -25,7 +25,7 @@ export default {
   props: ['movie'],
   setup(props) {
     const movieStore = useMovieStore();
-    const isInWatchlist = computed(() => movieStore.watchlist.includes(props.movie));
+    const isInWatchlist = computed(() => movieStore.getWatchlist.includes(props.movie));
     const toggleWatchlist = () => {
       if (isInWatchlist.value) {
         movieStore.removeFromWatchlist(props.movie);

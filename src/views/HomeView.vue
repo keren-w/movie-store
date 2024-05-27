@@ -26,7 +26,7 @@ export default {
 
     onMounted(async () => {
       await movieStore.fetchPopularMovies();
-      displayedMovies.value = movieStore.popularMovies;
+      displayedMovies.value = movieStore.getMovies;
     });
 
     return {

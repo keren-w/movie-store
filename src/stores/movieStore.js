@@ -7,10 +7,10 @@ export const useMovieStore = defineStore('movieStore', {
     watchlist: JSON.parse(localStorage.getItem('watchlist')) || [],
   }),
   getters: {
-    popularMovies(state) {
+    getMovies(state) {
         return state.movies;
     },
-    watchlist(state) {
+    getWatchlist(state) {
         return state.watchlist;
     }
   },
