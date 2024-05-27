@@ -10,6 +10,9 @@ export const useMovieStore = defineStore('movieStore', {
     popularMovies(state) {
         return state.movies;
     },
+    watchlist(state) {
+        return state.watchlist;
+    }
   },
   actions: {
     async fetchPopularMovies() {
