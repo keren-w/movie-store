@@ -29,7 +29,7 @@ export default {
 <style>
 .navbar {
     height: 100%;
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;

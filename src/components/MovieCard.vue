@@ -2,10 +2,11 @@
   <article class="movie-card" :class="{ 'active': isActive }" @mouseenter="isActive = true"
     @mouseleave="isActive = false">
     <img :src="imgUrl" class="movie-image" :class="{ 'active': isActive }" />
+    <div class="overlay"/>
     <div class="watchlist-icon">
-      <Icon name="io-heart" @click="toggleWatchlist" scale="1.5" v-if="isInWatchlist" />
-      <Icon name="io-heart-outline" @click="toggleWatchlist" scale="1.5" v-if="!isInWatchlist" />
-    </div>
+        <Icon name="md-playlistremove" @click="toggleWatchlist" scale="2" v-if="isInWatchlist" />
+        <Icon name="md-playlistadd" @click="toggleWatchlist" scale="2" v-if="!isInWatchlist" />
+      </div>
     <section class="movie-info">
       <h3>{{ movie.title }}</h3>
     </section>
@@ -17,9 +18,9 @@ import { computed } from 'vue';
 import { useMovieStore } from '../stores/movieStore';
 import { IMAGE_URL } from '../api/movies-api';
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { IoHeartOutline, IoHeart } from "oh-vue-icons/icons";
+import { IoHeartOutline, IoHeart, MdPlaylistadd, MdPlaylistremove } from "oh-vue-icons/icons";
 import { ref } from 'vue';
-addIcons(IoHeartOutline, IoHeart);
+addIcons(IoHeartOutline, IoHeart, MdPlaylistadd, MdPlaylistremove);
 
 export default {
   props: ['movie'],
@@ -65,20 +66,14 @@ export default {
       visibility: visible;
     }
 
-    .movie-image {
-      position: relative;
-
-      &::after {
-        content: "";
-        visibility: visible;
-        z-index: 10;
-        color: rgba(255, 255, 255, 0.5);
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      visibility: visible;
     }
   }
 }
@@ -98,10 +93,15 @@ h3 {
 
 }
 
+.overlay {
+  visibility: hidden;
+}
+
 .watchlist-icon {
   position: absolute;
+    visibility: hidden;
+    color: white;
   top: 4px;
   left: 4px;
-  visibility: hidden;
 }
 </style>
