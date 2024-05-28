@@ -18,10 +18,10 @@ export default {
   },
   setup() {
     const movieStore = useMovieStore();
-    const displayedMovies = ref(movieStore.popularMovies);
+    const displayedMovies = ref(movieStore.getMovies);
 
     const searchMovies = (query) => {
-      displayedMovies.value = query ? movieStore.searchMovies(query) : movieStore.popularMovies;
+      displayedMovies.value = query ? movieStore.searchMovies(query) : movieStore.getMovies;
     };
 
     onMounted(async () => {
